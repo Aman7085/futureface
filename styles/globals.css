@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  min-height: 100vh;
+  background: #FAF6F0;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar        { width: 4px; }
+::-webkit-scrollbar-track  { background: transparent; }
+::-webkit-scrollbar-thumb  { background: #E8D5C4; border-radius: 4px; }
+
+@keyframes fadeUp   { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
+@keyframes scanline { 0% { top:0%; } 100% { top:102%; } }
+@keyframes pulse    { 0%,100% { opacity:.5; } 50% { opacity:1; } }
+@keyframes glow     { 0%,100% { box-shadow:0 0 0 0 rgba(119,33,53,.35); } 50% { box-shadow:0 0 0 8px rgba(119,33,53,0); } }
+
+.ff-hover { transition: transform .2s ease, box-shadow .2s ease; }
+.ff-hover:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(119,33,53,.12) !important; }
+.ff-btn { transition: all .2s ease; cursor: pointer; }
+.ff-btn:hover  { transform: translateY(-2px); }
+.ff-btn:active { transform: translateY(0); }
+
+/* ── Camera modal: prevent button from going off-screen on small phones ── */
+@media (max-height: 700px) {
+  .camera-video {
+    max-height: 48vh !important;
+    width: auto !important;
+    object-fit: cover;
+  }
+}
+
+@media (max-height: 600px) {
+  .camera-video {
+    max-height: 42vh !important;
+  }
+}
